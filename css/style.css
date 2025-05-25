@@ -1,65 +1,143 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f4f4f4;
-    color: #333;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-blue: #003366; /* Dark blue for main elements, headers */
+    --accent-red: #CC0000;   /* Red for accents, calls to action, highlights */
+    --secondary-blue: #007bff; /* Brighter blue for links or secondary elements */
+    --neutral-light-gray: #f8f9fa; /* Light gray for backgrounds */
+    --neutral-medium-gray: #e9ecef; /* Slightly darker gray for borders or card backgrounds */
+    --neutral-dark-gray: #343a40; /* Dark gray for text */
+    --text-on-dark: #FFFFFF;    /* White text for dark backgrounds */
+    --text-on-light: #212529;   /* Default text color for light backgrounds */
+    --success-green: #28a745; /* Keep the sporty green for success/confirmation messages */
+    --warning-yellow: #ffc107;
+    --danger-red: #dc3545;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-on-light);
+    /* background-color: var(--neutral-light-gray); */
+    background: linear-gradient(to bottom, var(--neutral-light-gray), #e6e9ed); /* #e6e9ed is approx darken(var(--neutral-light-gray), 2%) */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: var(--primary-blue);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.75em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1em; }
+
+
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--primary-blue); /* Updated */
+    color: var(--text-on-dark); /* Updated */
     padding: 1rem 0;
     text-align: center;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Keep as is or adjust if needed */
+    color: var(--text-on-dark); /* Ensure header h1 is also white */
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: var(--primary-blue);
+    padding: 0.5em 0; /* Padding for the nav bar itself */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle bottom shadow */
 }
 
 nav ul {
     list-style-type: none;
+    margin: 0;
     padding: 0;
-    text-align: center;
-    background-color: #28a745; /* Primary color */
-    margin-top: 10px;
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: center; /* Center navigation items */
+    align-items: center;
 }
 
 nav ul li {
-    display: inline;
+    /* display: inline; Remove, as flex handles this */
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
-    padding: 1rem 1.5rem;
-    display: inline-block;
+    color: var(--text-on-dark);
+    padding: 0.75em 1.5em; /* Adjusted padding for links */
+    display: block; /* Changed to block for better padding application */
+    transition: background-color 0.3s ease;
 }
 
-nav ul li a:hover {
-    background-color: #1e7e34; /* Darker shade of primary for hover */
+nav ul li a:hover,
+nav ul li a.active { /* Assuming an 'active' class for current page */
+    background-color: var(--secondary-blue);
+    border-radius: 4px; /* Optional: slightly rounded corners on hover/active */
 }
 
-main {
-    max-width: 960px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+/* Main Content Container Styles */
+main, .container { /* Apply to main or a .container class if preferred */
+    max-width: 1200px;
+    margin: 20px auto; /* Centers the content */
+    padding: 2em; /* Spacing from nav/footer and sides */
+    background-color: var(--text-on-dark); /* White background for content area */
+    border-radius: 8px; /* Softer, modern look */
+    box-shadow: 0 0 15px rgba(0,0,0,0.15); /* Optional: for depth, slightly more pronounced */
 }
 
-h1 { /* This will style H1 in main, header H1 is already styled */
-    color: #28a745; /* Primary color */
-}
+/* Ensure headings and paragraphs are using the correct fonts and colors */
+/* h1, h2, h3, h4, h5, h6 are already defined with 'Roboto Condensed' and var(--primary-blue) */
+/* body is already defined with 'Roboto' and var(--text-on-light) */
+
+/* h1 { /* This will style H1 in main, header H1 is already styled */
+/* color: var(--primary-blue); /* Updated in general h1-h6 block */
+/* } */
 
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #333;
-    color: #fff;
+    background-color: var(--neutral-dark-gray); /* Updated */
+    color: var(--text-on-dark); /* Updated */
     margin-top: 30px;
 }
+
+/* Footer Styles (ensure these are distinct from existing footer if any) */
+.site-footer {
+    background-color: var(--primary-blue);
+    color: var(--text-on-dark); /* Or var(--neutral-light-gray) for softer text */
+    padding: 2.5em 1em; /* Increased padding */
+    text-align: center;
+    margin-top: 40px; /* Ensure space from main content */
+    border-top: 3px solid var(--secondary-blue); /* Accent top border */
+}
+
+.site-footer p {
+    margin: 0.5em 0;
+    font-size: 0.95em;
+}
+
+.site-footer a {
+    color: var(--neutral-light-gray); /* Lighter color for footer links */
+    text-decoration: underline;
+}
+
+.site-footer a:hover {
+    color: #ffffff; /* White on hover for footer links */
+    text-decoration: none;
+}
+
+/* General link styles (outside of nav) */
+a {
 
 /* Sponsor specific styles */
 main section {
@@ -67,37 +145,42 @@ main section {
 }
 
 main section h2 {
-    color: #444;
-    border-bottom: 1px solid #eee;
+    /* color: var(--primary-blue); /* Updated in general h1-h6 block */
+    border-bottom: 1px solid var(--neutral-medium-gray); /* Updated */
     padding-bottom: 10px;
 }
 
 /* Form Styles */
 form {
-    background-color: #fff;
-    padding: 20px;
+    background-color: #fff; /* Or var(--neutral-light-gray) */
+    padding: 20px; /* Keep existing padding or adjust if needed */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 1em; /* Added */
 }
 
 form fieldset {
-    border: 1px solid #ddd;
+    border: 1px solid var(--neutral-medium-gray);
     border-radius: 4px;
-    margin-bottom: 20px;
-    padding: 15px;
+    padding: 1.5em; /* Updated */
+    margin-bottom: 1.5em; /* Updated */
 }
 
 form legend {
+    font-family: 'Roboto Condensed', sans-serif; /* Added */
     font-size: 1.2em;
+    color: var(--primary-blue);
+    padding: 0 0.5em; /* Updated */
+    margin-left: 0.5em; /* Added */
     font-weight: bold;
-    color: #333;
-    padding: 0 10px;
 }
 
 form label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0.5em; /* Updated */
     font-weight: bold;
+    font-family: 'Roboto Condensed', sans-serif; /* Or 'Roboto' if preferred for labels */
+    color: var(--primary-blue); /* Updated */
 }
 
 form input[type="text"],
@@ -105,42 +188,68 @@ form input[type="email"],
 form input[type="tel"],
 form select {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
+    padding: 0.75em; /* Updated */
+    margin-bottom: 1em; /* Updated */
+    border: 1px solid var(--neutral-medium-gray);
     border-radius: 4px;
-    box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em; /* Added */
+    box-sizing: border-box;
 }
 
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form select:focus {
+    border-color: var(--secondary-blue);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25); /* Updated */
+    outline: none;
+}
+
+
 form input[type="checkbox"] {
-    margin-right: 5px;
+    margin-right: 0.5em; /* Updated */
     vertical-align: middle;
 }
 
 form div {
-    margin-bottom: 15px; /* Spacing between form elements/groups */
+    margin-bottom: 15px; /* Spacing between form elements/groups - can keep or adjust */
 }
 
 form div h3 { /* Player X heading */
-    font-size: 1.1em;
-    color: #555;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: var(--primary-blue);
+    font-size: 1.3em; /* Adjusted size for form context */
+    margin-top: 1em; /* Adjusted spacing */
+    margin-bottom: 0.5em;
 }
 
-form input[type="submit"] {
-    background-color: #5cb85c;
-    color: white;
-    padding: 12px 20px;
+form input[type="submit"], .button-submit { /* Added class .button-submit */
+    background-color: var(--accent-red); /* Updated to use accent-red */
+    color: var(--text-on-dark);
+    padding: 0.75em 1.5em; /* Updated */
     border: none;
     border-radius: 4px;
-    cursor: pointer;
     font-size: 1.1em;
+    cursor: pointer;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase; /* Added */
 }
 
-form input[type="submit"]:hover {
-    background-color: #4cae4c;
+form input[type="submit"]:hover, .button-submit:hover {
+    background-color: #a00000; /* Darken accent red */
 }
+
+/* Accent button class */
+.button-accent {
+    background-color: var(--accent-red);
+    color: var(--text-on-dark);
+}
+
+.button-accent:hover {
+    background-color: #a00000; /* Darken accent red */
+}
+
 
 /* Adjust label for checkboxes to be inline */
 form div label[for*="is_pro"] {
@@ -158,28 +267,269 @@ table {
 }
 
 table thead tr {
-    background-color: #28a745; /* Primary color for table header */
-    color: #fff;
+    background-color: var(--primary-blue); /* Updated */
+    color: var(--text-on-dark); /* Updated */
 }
 
 table th, table td {
-    border: 1px solid #ddd;
+    border: 1px solid var(--neutral-medium-gray); /* Updated */
     padding: 12px;
     text-align: left;
 }
 
 table tbody tr:nth-child(even) {
-    background-color: #f9f9f9; /* Zebra striping for rows */
+    background-color: var(--neutral-light-gray); /* Updated */
 }
 
 table tbody tr:hover {
-    background-color: #f1f1f1; /* Highlight on hover */
+    background-color: var(--neutral-medium-gray); /* Updated */
 }
 
 table caption {
     caption-side: bottom;
     padding: 10px;
     font-style: italic;
-    color: #666;
+    color: var(--neutral-dark-gray); /* Updated */
     text-align: center;
+}
+
+/* General link styles (outside of nav) */
+a {
+    color: var(--secondary-blue);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3; /* Darken secondary blue */
+    text-decoration: underline;
+}
+
+/* Hero Section Styles */
+.hero-section {
+    /* background-color: var(--primary-blue); Fallback or if no image */
+    background-image: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.8)), url('../images/billiards_background_placeholder.jpg'); /* Using primary-blue with opacity */
+    background-size: cover;
+    background-position: center;
+    color: var(--text-on-dark);
+    padding: 5em 2em; /* Increased padding */
+    text-align: center;
+    border-radius: 8px; 
+    margin-bottom: 30px; 
+    position: relative; /* For potential pseudo-elements if needed later */
+}
+
+.hero-section h1 {
+    color: var(--text-on-dark); /* Override default h1 color if needed */
+    font-size: 3em; /* Make it more prominent */
+    margin-bottom: 0.5em;
+}
+
+.hero-section .tagline {
+    font-size: 1.3em;
+    color: var(--neutral-light-gray); /* Lighter text for tagline against dark blue */
+    margin-bottom: 1.5em;
+}
+
+.cta-button {
+    background-color: var(--accent-red);
+    color: var(--text-on-dark);
+    padding: 12px 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.cta-button:hover {
+    background-color: #a00000; /* Darken accent red */
+    color: var(--text-on-dark); /* Ensure text color remains consistent on hover */
+    text-decoration: none; /* Remove underline if it appears from general 'a:hover' */
+}
+
+/* About Section Styles */
+.about-section {
+    padding: 2em;
+    background-color: #fff; /* Assuming main content area is distinct */
+    border-radius: 8px;
+    margin-bottom: 20px; /* Space below about section */
+}
+
+.about-section h2 {
+    /* color: var(--primary-blue); /* Already set by general h2 styles */
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.about-section p {
+    line-height: 1.7;
+    color: var(--text-on-light);
+    text-align: justify; /* Or left, depending on preference */
+}
+
+/* Sponsors Page Styles */
+.promoter-section, .sponsors-section {
+    margin-bottom: 2em;
+    padding: 1.5em;
+    background-color: var(--neutral-light-gray); /* Light background for sections */
+    border-radius: 8px;
+}
+
+.promoter-section h2, .sponsors-section h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    color: var(--primary-blue);
+}
+
+/* Responsive Tables */
+@media (max-width: 768px) { /* This should be part of the existing 768px media query block */
+    .table-responsive-wrapper {
+        overflow-x: auto; /* Enable horizontal scrolling */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        margin-bottom: 1em; /* Add some space below the scrolling table */
+    }
+    table { /* This applies to all tables, which is fine for this project */
+        min-width: 600px; /* Ensure table content doesn't get too cramped */
+    }
+}
+
+/* Responsive Layout Adjustments */
+@media (max-width: 768px) {
+    main, .container {
+        padding: 1em; /* Reduced padding for smaller screens */
+    }
+
+    .hero-section {
+        padding: 2em 1em; /* Adjust padding */
+    }
+    .hero-section h1 {
+        font-size: 2em; /* Adjust font size */
+    }
+    .hero-section p.tagline {
+        font-size: 0.9em;
+    }
+    .cta-button { /* Ensure CTA button is also responsive if needed */
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+
+    .sponsor-grid {
+        grid-template-columns: 1fr; /* Stack sponsors in a single column */
+        gap: 1em; /* Adjust gap for single column */
+    }
+    
+    .promoter-section, .sponsors-section, .district-section {
+        padding: 1em; /* Reduce padding for these sections */
+    }
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack items vertically */
+        width: 100%;
+    }
+    nav ul li {
+        text-align: center; /* Center-align nav items */
+        width: 100%; /* Make each item take full width */
+    }
+    nav ul li a {
+        display: block; /* Make links block elements */
+        padding: 0.8em 1em; /* Adjust padding */
+        border-bottom: 1px solid var(--neutral-medium-gray); /* Add separators */
+    }
+    nav ul li:last-child a {
+        border-bottom: none; /* Remove border from last item */
+    }
+}
+
+/* Responsive Typography */
+@media (max-width: 480px) {
+    body {
+        font-size: 0.95em; /* Slightly smaller base font */
+    }
+    h1, .hero-section h1 { font-size: 1.8em !important; } /* Adjust for smaller screens, !important for hero h1 */
+    h2 { font-size: 1.5em; }
+    h3 { font-size: 1.2em; }
+
+    .hero-section p.tagline {
+        font-size: 0.85em;
+    }
+    .cta-button {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+}
+
+.promoter-item, .sponsor-item {
+    text-align: center; /* Center logo and text */
+    margin-bottom: 1.5em;
+}
+
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 1.5em;
+}
+
+.sponsor-logo {
+    max-width: 200px; /* Max width for logos */
+    max-height: 100px; /* Max height to keep them somewhat uniform */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto 0.75em auto; /* Center logo and add space below */
+    display: block; /* Ensure it's a block for auto margins to work */
+    object-fit: contain; /* Ensure logo is scaled correctly within bounds */
+}
+
+.promoter-logo {
+    max-width: 250px; /* Promoter logo can be a bit larger if needed */
+}
+
+.promoter-item h3, .sponsor-item h3 {
+    color: var(--secondary-blue);
+    margin-bottom: 0.5em;
+}
+
+.promoter-item h3 a, .sponsor-item h3 a {
+    color: var(--secondary-blue);
+    text-decoration: none;
+}
+
+.promoter-item h3 a:hover, .sponsor-item h3 a:hover {
+    text-decoration: underline;
+}
+
+.promoter-item p, .sponsor-item p {
+    font-size: 0.95em;
+    color: var(--text-on-light);
+    line-height: 1.5;
+}
+
+/* General Image Styling */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Helps with margin auto and removes extra space below */
+}
+
+/* Card Styling (Conceptual) */
+.card {
+    background-color: var(--text-on-dark); /* White background */
+    border: 1px solid var(--neutral-medium-gray);
+    border-radius: 8px;
+    padding: 1em;
+    margin-bottom: 1em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease-in-out; /* Subtle hover effect */
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Slightly more pronounced shadow on hover */
+}
+
+.card h3 { /* Example: Card title styling */
+    margin-top: 0;
+    color: var(--primary-blue);
 }
