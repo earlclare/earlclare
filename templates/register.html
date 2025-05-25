@@ -23,7 +23,7 @@
     </header>
     <main class="container">
         <h1>Team Registration</h1>
-        <form>
+        <form id="registrationForm">
             <fieldset>
                 <legend>Team Information</legend>
                 <div>
@@ -35,14 +35,9 @@
                     <input type="text" id="team_name" name="team_name" required>
                 </div>
                 <div>
-                    <label for="district">District:</label>
-                    <select id="district" name="district">
-                        <option value="Corozal">Corozal</option>
-                        <option value="Orange Walk">Orange Walk</option>
-                        <option value="Belize City">Belize City</option>
-                        <option value="Cayo">Cayo</option>
-                        <option value="Stann Creek">Stann Creek</option>
-                        <option value="Toledo">Toledo</option>
+                    <label for="district-select">District:</label>
+                    <select name="district" id="district-select" required>
+                        <option value="">Loading districts...</option>
                     </select>
                 </div>
             </fieldset>
@@ -124,6 +119,7 @@
                 </div>
             </fieldset>
             
+            <div id="form-messages" role="status" aria-live="polite"></div>
             <input type="submit" value="Register Team">
         </form>
     </main>
@@ -131,6 +127,6 @@
         <p>&copy; 2024 Caribbean Tire 8 Ball Pool Tournament. All Rights Reserved.</p>
         <p>Promoted by <a href="https://bbsl.bz/" target="_blank">Belize Billiards Sporting League (BBSL)</a></p>
     </footer>
-    <script src="../js/script.js"></script>
+    <script src="../js/script.js" defer></script>
 </body>
 </html>

@@ -383,6 +383,50 @@ a:hover {
     color: var(--primary-blue);
 }
 
+/* css/style.css */
+#form-messages {
+    margin-top: 1em;
+    padding: 0.75em;
+    border-radius: 4px;
+    font-weight: bold;
+}
+#form-messages:empty {
+    display: none; /* Hide if empty */
+}
+
+.district-teams-section {
+    margin-bottom: 2em;
+    padding: 1em;
+    background-color: #f9f9f9; /* Light background for section */
+    border: 1px solid var(--neutral-medium-gray);
+    border-radius: 8px;
+}
+.district-teams-section h2 {
+    border-bottom: 2px solid var(--primary-blue);
+    padding-bottom: 0.3em;
+    margin-top: 0; /* Adjust if needed */
+}
+.teams-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.team-item {
+    background-color: var(--text-on-dark); /* White card for each team */
+    border: 1px solid var(--neutral-medium-gray);
+    border-radius: 6px;
+    padding: 1em;
+    margin-bottom: 1em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.team-item h3 {
+    margin-top: 0;
+    color: var(--secondary-blue);
+}
+.team-item ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
 /* Responsive Tables */
 @media (max-width: 768px) { /* This should be part of the existing 768px media query block */
     .table-responsive-wrapper {
