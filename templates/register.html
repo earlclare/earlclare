@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Registration - Caribbean Tire 8 Ball Pool Tournament</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Caribbean Tire 8 Ball Pool Tournament</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="standings.html">Standings</a></li>
+                <li><a href="rules.html">Rules</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="sponsors.html">Sponsors</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Team Registration</h1>
+        <form>
+            <fieldset>
+                <legend>Team Information</legend>
+                <div>
+                    <label for="company_name">Company Name:</label>
+                    <input type="text" id="company_name" name="company_name">
+                </div>
+                <div>
+                    <label for="team_name">Team Name:</label>
+                    <input type="text" id="team_name" name="team_name" required>
+                </div>
+                <div>
+                    <label for="district">District:</label>
+                    <select id="district" name="district">
+                        <option value="Corozal">Corozal</option>
+                        <option value="Orange Walk">Orange Walk</option>
+                        <option value="Belize City">Belize City</option>
+                        <option value="Cayo">Cayo</option>
+                        <option value="Stann Creek">Stann Creek</option>
+                        <option value="Toledo">Toledo</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Team Captain Details</legend>
+                <div>
+                    <label for="captain_name">Captain's Name:</label>
+                    <input type="text" id="captain_name" name="captain_name" required>
+                </div>
+                <div>
+                    <label for="captain_email">Captain's Email:</label>
+                    <input type="email" id="captain_email" name="captain_email" required>
+                </div>
+                <div>
+                    <label for="captain_phone">Captain's Phone:</label>
+                    <input type="tel" id="captain_phone" name="captain_phone" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Player Details</legend>
+                <p>Maximum 3 pro players per team.</p>
+                
+                <div>
+                    <h3>Player 1</h3>
+                    <label for="player1_name">Player 1 Name:</label>
+                    <input type="text" id="player1_name" name="player1_name">
+                    <label for="player1_is_pro">Is Pro Player?</label>
+                    <input type="checkbox" id="player1_is_pro" name="player1_is_pro">
+                </div>
+                
+                <div>
+                    <h3>Player 2</h3>
+                    <label for="player2_name">Player 2 Name:</label>
+                    <input type="text" id="player2_name" name="player2_name">
+                    <label for="player2_is_pro">Is Pro Player?</label>
+                    <input type="checkbox" id="player2_is_pro" name="player2_is_pro">
+                </div>
+
+                <div>
+                    <h3>Player 3</h3>
+                    <label for="player3_name">Player 3 Name:</label>
+                    <input type="text" id="player3_name" name="player3_name">
+                    <label for="player3_is_pro">Is Pro Player?</label>
+                    <input type="checkbox" id="player3_is_pro" name="player3_is_pro">
+                </div>
+
+                <div>
+                    <h3>Player 4</h3>
+                    <label for="player4_name">Player 4 Name:</label>
+                    <input type="text" id="player4_name" name="player4_name">
+                    <label for="player4_is_pro">Is Pro Player?</label>
+                    <input type="checkbox" id="player4_is_pro" name="player4_is_pro">
+                </div>
+
+                <div>
+                    <h3>Player 5</h3>
+                    <label for="player5_name">Player 5 Name:</label>
+                    <input type="text" id="player5_name" name="player5_name">
+                    <label for="player5_is_pro">Is Pro Player?</label>
+                    <input type="checkbox" id="player5_is_pro" name="player5_is_pro">
+                </div>
+
+                <div>
+                    <h3>Player 6</h3>
+                    <label for="player6_name">Player 6 Name:</label>
+                    <input type="text" id="player6_name" name="player6_name">
+                    <label for="player6_is_pro">Is Pro Player?</label>
+                    <input type="checkbox" id="player6_is_pro" name="player6_is_pro">
+                </div>
+
+                <div>
+                    <h3>Player 7</h3>
+                    <label for="player7_name">Player 7 Name:</label>
+                    <input type="text" id="player7_name" name="player7_name">
+                    <label for="player7_is_pro">Is Pro Player?</label>
+                    <input type="checkbox" id="player7_is_pro" name="player7_is_pro">
+                </div>
+            </fieldset>
+            
+            <input type="submit" value="Register Team">
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Caribbean Tire 8 Ball Pool Tournament</p>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>
